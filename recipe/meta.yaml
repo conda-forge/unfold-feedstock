@@ -20,10 +20,11 @@ requirements:
     - python >=3.10
     - setuptools
   run:
+    - bw2calc
     - bw2data
     - bw2io
     - datapackage
-    - numpy
+    - numpy <2.0.0
     - pandas
     - prettytable
     - pyprind
