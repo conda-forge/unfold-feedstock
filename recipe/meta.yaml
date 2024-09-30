@@ -1,5 +1,5 @@
 {% set name = "unfold" %}
-{% set version = "1.2.0" %}
+{% set version = "1.2.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 456b27ea8c33ef579f326ac30be21ea327034e1a7b57b4d88b604c8ff4e0359c
+  sha256: 678e62203c2bbaf470d1bfdac814671a8090f23cb54cef5dc33d4b4161481b39
 
 build:
   noarch: python
@@ -20,10 +20,11 @@ requirements:
     - python >=3.10
     - setuptools
   run:
+    - bw2calc
     - bw2data
     - bw2io
     - datapackage
-    - numpy
+    - numpy <2.0.0
     - pandas
     - prettytable
     - pyprind
