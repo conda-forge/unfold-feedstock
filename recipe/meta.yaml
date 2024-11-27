@@ -1,13 +1,14 @@
 {% set name = "unfold" %}
-{% set version = "1.2.1" %}
+{% set version = "1.2.2" %}
+{% set python_min = "3.10" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 678e62203c2bbaf470d1bfdac814671a8090f23cb54cef5dc33d4b4161481b39
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 3126c538475c00c34bdcc74ffa0b7b4b26d60164f0931cc99014b5761dc92766
 
 build:
   noarch: python
@@ -17,7 +18,7 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.10
+    - python {{ python_min }}
     - setuptools
   run:
     - bw2calc
@@ -28,7 +29,7 @@ requirements:
     - pandas
     - prettytable
     - pyprind
-    - python >=3.10
+    - python >={{ python_min }}
     - pyyaml
     - scipy
     - sparse
@@ -37,6 +38,8 @@ requirements:
 test:
   imports:
     - unfold
+  requires:
+    - python {{ python_min }}
 
 about:
   home: https://github.com/polca/unfold
