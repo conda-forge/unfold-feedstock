@@ -1,5 +1,6 @@
 {% set name = "unfold" %}
 {% set version = "1.2.2" %}
+{% set python_min = "3.10" %}
 
 package:
   name: {{ name|lower }}
@@ -17,7 +18,7 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.10
+    - python {{ python_min }}
     - setuptools
   run:
     - bw2calc
@@ -28,7 +29,7 @@ requirements:
     - pandas
     - prettytable
     - pyprind
-    - python >=3.10
+    - python >={{ python_min }}
     - pyyaml
     - scipy
     - sparse
@@ -37,6 +38,8 @@ requirements:
 test:
   imports:
     - unfold
+  requires:
+    - python {{ python_min }}
 
 about:
   home: https://github.com/polca/unfold
