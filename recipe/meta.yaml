@@ -1,5 +1,5 @@
 {% set name = "unfold" %}
-{% set version = "1.2.2" %}
+{% set version = "1.2.3" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 3126c538475c00c34bdcc74ffa0b7b4b26d60164f0931cc99014b5761dc92766
+  sha256: 17ab596e68bcfae30b5d38100b9896c297e0db3b190619d7401b88c8c2aab1df
 
 build:
   noarch: python
